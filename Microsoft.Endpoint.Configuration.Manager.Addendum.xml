@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Microsoft.Endpoint.Configuration.Manager.Addendum</ID>
+      <Version>1.0.0.1</Version>
+    </Identity>
+    <Name>Microsoft Endpoint Configuration Manager Addendum</Name>
+    <References>
+      <Reference Alias="MECM">
+        <ID>MECM</ID>
+        <Version>5.0.2211.0</Version>
+        <PublicKeyToken>3aea5d3804b7337d</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Monitoring>
+    <Overrides>
+      <RuleConfigurationOverride ID="Override.Severity.MECM.WsusConfigurationManager.FailedToConfigProxy.Event.Rule" Context="MECM!MECM.ServerComponent" Enforced="false" Rule="MECM!MECM.WsusConfigurationManager.FailedToConfigProxy.Event.Rule" Parameter="Severity" Module="Alert">
+        <Value>1</Value>
+      </RuleConfigurationOverride>
+      <MonitorPropertyOverride ID="Override.Severity.MECM.SoftwareUpdatePointSync.AlertState.Monitor" Context="MECM!MECM.SiteServer" Enforced="false" Monitor="MECM!MECM.SoftwareUpdatePointSync.AlertState.Monitor" Property="AlertSeverity">
+        <Value>Warning</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="Override.Severity.MECM.SoftwareUpdatePoint.RoleAvailability.Monitor" Context="MECM!MECM.SoftwareUpdatePoint" Enforced="false" Monitor="MECM!MECM.SoftwareUpdatePoint.RoleAvailability.Monitor" Property="AlertSeverity">
+        <Value>Warning</Value>
+      </MonitorPropertyOverride>
+      <RuleConfigurationOverride ID="Override.Severity.MECM.SiteComponentManager.CanNotFindObjectInAD.Event.Rule" Context="MECM!MECM.SiteComponentManager" Enforced="false" Rule="MECM!MECM.SiteComponentManager.CanNotFindObjectInAD.Event.Rule" Parameter="Severity" Module="Alert">
+        <Value>1</Value>
+      </RuleConfigurationOverride>
+      <RuleConfigurationOverride ID="Override.Severity.MECM.SiteComponentManager.CouldNotAccessSiteSystem.Event.Rule" Context="MECM!MECM.SiteComponentManager" Enforced="false" Rule="MECM!MECM.SiteComponentManager.CouldNotAccessSiteSystem.Event.Rule" Parameter="Severity" Module="Alert">
+        <Value>1</Value>
+      </RuleConfigurationOverride>
+      <RuleConfigurationOverride ID="Override.Severity.MECM.StateSystem.FailedToExecuteSummaryTask.Event.Rule" Context="MECM!MECM.ServerComponent" Enforced="false" Rule="MECM!MECM.StateSystem.FailedToExecuteSummaryTask.Event.Rule" Parameter="Severity" Module="Alert">
+        <Value>1</Value>
+      </RuleConfigurationOverride>
+      <RuleConfigurationOverride ID="Override.Severity.MECM.ComponentServer.ComponentStoppedUnexpectedly.Event.Rule" Context="MECM!MECM.ComponentServer" Enforced="false" Rule="MECM!MECM.ComponentServer.ComponentStoppedUnexpectedly.Event.Rule" Parameter="Severity" Module="Alert">
+        <Value>1</Value>
+      </RuleConfigurationOverride>
+      <MonitorPropertyOverride ID="Override.Severity.MECM.ReportingPoint.RoleAvailability.Monitor" Context="MECM!MECM.ReportingPoint" Enforced="false" Monitor="MECM!MECM.ReportingPoint.RoleAvailability.Monitor" Property="AlertSeverity">
+        <Value>Warning</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="Override.Severity.MECM.BackupStatus.StatusMessage.Monitor" Context="MECM!MECM.CentralSiteServer" Enforced="false" Monitor="MECM!MECM.BackupStatus.StatusMessage.Monitor" Property="AlertSeverity">
+        <Value>Warning</Value>
+      </MonitorPropertyOverride>
+    </Overrides>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="Microsoft.Endpoint.Configuration.Manager.Addendum">
+          <Name>Microsoft Endpoint Configuration Manager Addendum</Name>
+          <Description>Created 21 Mar 2023 to tune Kevin Holman MECM alerts</Description>
+        </DisplayString>
+
+        <DisplayString ElementID="Override.Severity.MECM.SoftwareUpdatePointSync.AlertState.Monitor">
+          <Name>NotUsed</Name>
+          <Description>21 Mar 2023 - KWJ - Override to Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.SoftwareUpdatePoint.RoleAvailability.Monitor">
+          <Name>NotUsed</Name>
+          <Description>21 Mar 2023 - KWJ - Override to Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.ReportingPoint.RoleAvailability.Monitor">
+          <Name>NotUsed</Name>
+          <Description>8 June 2023 - Changing MECM alerts to Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.BackupStatus.StatusMessage.Monitor">
+          <Name>NotUsed</Name>
+          <Description>6 July 2023 - Changing to warning</Description>
+        </DisplayString>
+
+        <DisplayString ElementID="Override.Severity.MECM.WsusConfigurationManager.FailedToConfigProxy.Event.Rule">
+          <Name>NotUsed</Name>
+          <Description>21 Mar 2023 - KWJ - Override to Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.SiteComponentManager.CanNotFindObjectInAD.Event.Rule">
+          <Name>NotUsed</Name>
+          <Description>23 Apr 2023 - KWJ - Changing to warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.SiteComponentManager.CouldNotAccessSiteSystem.Event.Rule">
+          <Name>NotUsed</Name>
+          <Description>24 May 2023 - Changing to WARNING for health model</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.StateSystem.FailedToExecuteSummaryTask.Event.Rule">
+          <Name>NotUsed</Name>
+          <Description>24 May 2023 - Changing to WARNING for health model</Description>
+        </DisplayString>
+        <DisplayString ElementID="Override.Severity.MECM.ComponentServer.ComponentStoppedUnexpectedly.Event.Rule">
+          <Name>NotUsed</Name>
+          <Description>24 May 2023 - Changing to WARNING for health model</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
